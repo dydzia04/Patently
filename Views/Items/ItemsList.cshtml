@@ -1,0 +1,37 @@
+@model MVC_Project.VievModels.ItemsViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h1>Przedmioty</h1>
+<p>
+    @Html.ActionLink("Nowy przedmiot", "New", "Items", null, new { @class="btn btn-primary" })
+</p>
+@if (@Model.Items.Count > 0)
+{
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Przedmioty</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        @foreach (var item in Model.Items)
+        {
+            <tr>
+                <td>
+                    <a href="">@item.Name</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+@if (@Model.Items.Count == 0)
+{
+    <p>Nie ma żadnych przedmiotów</p>
+}
+

@@ -1,0 +1,10 @@
+@model MVC_Project.VievModels.ItemViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h2>Nazwa: @Model.Item.Name</h2>
+<p>Kiedy został dodany: @Model.Item.DateWhenAdded</p>
+<p>Twórca: @Model.Item.Creator.Name @Model.Item.Creator.SecName</p>

@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e75a8708-703d-481c-92e3-b8d621cfa57e" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="MVC_Project" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../Patently/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Patently/appsettings.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Patently/Startup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Patently/Views/Creators/Creators.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Patently/Views/Items/Items.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Patently/Properties/launchSettings.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Patently/Controllers/HomeController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Patently/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_NavBar.cshtml.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Patently/Views/Shared/_NavBar.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Patently/Views/_ViewStart.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Patently/VievModels/CreatorsViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Patently/Views/_ViewImports.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Patently/VievModels/ItemsViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Patently/Views/Items/ItemsList.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Patently/Views/Home/Privacy.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Patently/Views/Creators/CreatorsList.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Patently/Views/Home/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Patently/Views/Shared/_ValidationScriptsPartial.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Patently/VievModels/NewCreator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Patently/Views/Creators/New.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Patently/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Patently/VievModels/NewItem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Patently/Views/Items/New.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Patently/Controllers/LoginController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Patently/Controllers/RegisterController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Patently/Controllers/ItemsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Patently/Controllers/CreatorsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Patently/Models/Creator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Patently/Models/Item.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Patently/VievModels/CreatorViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Patently/VievModels/ItemViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Patently/appsettings.Development.json" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Properties/launchSettings.json" />
+        <option value="$PROJECT_DIR$/Views/HelloWorld/Index.cshtml" />
+        <option value="$PROJECT_DIR$/Controllers/HelloWorldController.cs" />
+        <option value="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" />
+        <option value="$PROJECT_DIR$/../Patently/Controllers/LoginController.cs" />
+        <option value="$PROJECT_DIR$/../Patently/Controllers/RegisterController.cs" />
+        <option value="$PROJECT_DIR$/../Patently/Controllers/HelloWorldController.cs" />
+        <option value="$PROJECT_DIR$/../Patently/VievModels/CreatorViewModel.cs" />
+        <option value="$PROJECT_DIR$/../Patently/VievModels/ItemViewModel.cs" />
+        <option value="$PROJECT_DIR$/../Patently/Views/Item/Item.cshtml" />
+        <option value="$PROJECT_DIR$/../Patently/Views/Creator/Creator.cshtml" />
+        <option value="$PROJECT_DIR$/../Patently/Pages/Items/Items.cshtml" />
+        <option value="$PROJECT_DIR$/../Patently/Pages/Creators/Creators.cshtml" />
+        <option value="$PROJECT_DIR$/../Patently/Views/Items/Items.cshtml" />
+        <option value="$PROJECT_DIR$/../Patently/Views/navbar.cshtml.cs" />
+        <option value="$PROJECT_DIR$/../Patently/Views/navbar.cshtml" />
+        <option value="$PROJECT_DIR$/../Patently/Views/_Navbar.cshtml.cs" />
+        <option value="$PROJECT_DIR$/../Patently/Views/_Navbar.cshtml" />
+        <option value="$PROJECT_DIR$/../Patently/Views/Shared/_Navbar.cshtml" />
+        <option value="$PROJECT_DIR$/../Patently/Views/Shared/_NavBar.cshtml.cs" />
+        <option value="$PROJECT_DIR$/../Patently/VievModels/CreatorsViewModel.cs" />
+        <option value="$PROJECT_DIR$/../Patently/VievModels/ItemsViewModel.cs" />
+        <option value="$PROJECT_DIR$/../Patently/Views/Shared/_Layout.cshtml" />
+        <option value="$PROJECT_DIR$/../Patently/Models/Creator.cs" />
+        <option value="$PROJECT_DIR$/../Patently/Models/Item.cs" />
+        <option value="$PROJECT_DIR$/../Patently/Views/Creators/Creators.cshtml" />
+        <option value="$PROJECT_DIR$/../Patently/Views/Items/ItemsList.cshtml" />
+        <option value="$PROJECT_DIR$/../Patently/Views/Creators/CreatorsList.cshtml" />
+        <option value="$PROJECT_DIR$/../Patently/Controllers/CreatorsController.cs" />
+        <option value="$PROJECT_DIR$/../Patently/VievModels/NewCreato.cs" />
+        <option value="$PROJECT_DIR$/../Patently/VievModels/NewCreator.cs" />
+        <option value="$PROJECT_DIR$/../Patently/VievModels/NewItem.cs" />
+        <option value="$PROJECT_DIR$/../Patently/Controllers/ItemsController.cs" />
+        <option value="$PROJECT_DIR$/../Patently/Views/Items/New.cshtml" />
+        <option value="$PROJECT_DIR$/../Patently/Views/Creators/New.cshtml" />
+        <option value="$PROJECT_DIR$/../Patently/Views/Shared/_NavBar.cshtml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1XffZrIvtFNJ86U482M8L9AqKuy" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TWShift.4" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Patently" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RunManager" selected=".NET Launch Settings Profile.MVC_Project">
+    <configuration name="_Layout.cshtml" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/MVC_Project/Views/Shared/_Layout.cshtml" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="MVC_Project" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/../Patently/Patently.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v3.1" />
+      <option name="LAUNCH_PROFILE_NAME" value="MVC_Project" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MVC_Project: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/MVC_Project.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v3.1" />
+      <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug._Layout.cshtml" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e75a8708-703d-481c-92e3-b8d621cfa57e" name="Default Changelist" comment="" />
+      <changelist id="" name="New changelist" comment="" />
+      <created>1581442128667</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581442128667</updated>
+      <workItem from="1581442137131" duration="18229000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="WindowStateProjectService">
+    <state x="228" y="26" width="913" height="694" key="#MVC_Project" timestamp="1581448826057">
+      <screen x="0" y="26" width="1366" height="694" />
+    </state>
+    <state x="228" y="26" width="913" height="694" key="#MVC_Project/0.900.1366.768/0.26.1366.694@0.26.1366.694" timestamp="1581448826057" />
+    <state x="546" y="135" width="424" height="484" key="FileChooserDialogImpl" timestamp="1581461962154">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="546" y="135" key="FileChooserDialogImpl/0.900.1366.768/0.0.1600.900@0.0.1600.900" timestamp="1581461962154" />
+    <state x="466" y="130" width="424" height="484" key="FileChooserDialogImpl/0.900.1366.768/0.26.1366.694@0.26.1366.694" timestamp="1581456367928" />
+    <state width="1558" height="161" key="GridCell.Tab.0.bottom" timestamp="1581462411412">
+      <screen x="0" y="900" width="1366" height="768" />
+    </state>
+    <state width="1558" height="161" key="GridCell.Tab.0.bottom/0.900.1366.768/0.0.1600.900@0.0.1600.900" timestamp="1581462003571" />
+    <state width="1558" height="161" key="GridCell.Tab.0.bottom/0.900.1366.768/0.0.1600.900@0.900.1366.768" timestamp="1581462411412" />
+    <state width="1324" height="161" key="GridCell.Tab.0.bottom/0.900.1366.768/0.26.1366.694@0.26.1366.694" timestamp="1581456436873" />
+    <state width="1558" height="161" key="GridCell.Tab.0.center" timestamp="1581462411412">
+      <screen x="0" y="900" width="1366" height="768" />
+    </state>
+    <state width="1558" height="161" key="GridCell.Tab.0.center/0.900.1366.768/0.0.1600.900@0.0.1600.900" timestamp="1581462003570" />
+    <state width="1558" height="161" key="GridCell.Tab.0.center/0.900.1366.768/0.0.1600.900@0.900.1366.768" timestamp="1581462411412" />
+    <state width="1324" height="161" key="GridCell.Tab.0.center/0.900.1366.768/0.26.1366.694@0.26.1366.694" timestamp="1581456436872" />
+    <state width="1558" height="161" key="GridCell.Tab.0.left" timestamp="1581462411412">
+      <screen x="0" y="900" width="1366" height="768" />
+    </state>
+    <state width="1558" height="161" key="GridCell.Tab.0.left/0.900.1366.768/0.0.1600.900@0.0.1600.900" timestamp="1581462003570" />
+    <state width="1558" height="161" key="GridCell.Tab.0.left/0.900.1366.768/0.0.1600.900@0.900.1366.768" timestamp="1581462411412" />
+    <state width="1324" height="161" key="GridCell.Tab.0.left/0.900.1366.768/0.26.1366.694@0.26.1366.694" timestamp="1581456436872" />
+    <state width="1558" height="161" key="GridCell.Tab.0.right" timestamp="1581462411412">
+      <screen x="0" y="900" width="1366" height="768" />
+    </state>
+    <state width="1558" height="161" key="GridCell.Tab.0.right/0.900.1366.768/0.0.1600.900@0.0.1600.900" timestamp="1581462003571" />
+    <state width="1558" height="161" key="GridCell.Tab.0.right/0.900.1366.768/0.0.1600.900@0.900.1366.768" timestamp="1581462411412" />
+    <state width="1324" height="161" key="GridCell.Tab.0.right/0.900.1366.768/0.26.1366.694@0.26.1366.694" timestamp="1581456436873" />
+    <state x="266" y="926" width="824" height="694" key="RiderGenerateDialog" timestamp="1581459434807">
+      <screen x="0" y="900" width="1366" height="768" />
+    </state>
+    <state x="266" y="926" width="824" height="694" key="RiderGenerateDialog/0.900.1366.768/0.0.1600.900@0.900.1366.768" timestamp="1581459434807" />
+    <state x="266" y="57" width="824" height="630" key="RiderGenerateDialog/0.900.1366.768/0.26.1366.694@0.26.1366.694" timestamp="1581455864759" />
+    <state x="326" y="84" key="SettingsEditor" timestamp="1581461977128">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="326" y="84" key="SettingsEditor/0.900.1366.768/0.0.1600.900@0.0.1600.900" timestamp="1581461977128" />
+    <state x="516" y="1144" width="324" height="255" key="VCS.EditChangelistDialog" timestamp="1581462383367">
+      <screen x="0" y="900" width="1366" height="768" />
+    </state>
+    <state x="516" y="1144" width="324" height="255" key="VCS.EditChangelistDialog/0.900.1366.768/0.0.1600.900@0.900.1366.768" timestamp="1581462383367" />
+    <state x="347" y="163" key="run.anything.popup" timestamp="1581456066071">
+      <screen x="0" y="26" width="1366" height="694" />
+    </state>
+    <state x="347" y="163" key="run.anything.popup/0.900.1366.768/0.26.1366.694@0.26.1366.694" timestamp="1581456066071" />
+    <state x="345" y="917" width="673" height="751" key="search.everywhere.popup" timestamp="1581458047867">
+      <screen x="0" y="900" width="1366" height="768" />
+    </state>
+    <state x="345" y="917" width="673" height="751" key="search.everywhere.popup/0.900.1366.768/0.0.1600.900@0.900.1366.768" timestamp="1581458047867" />
+    <state x="345" y="41" width="673" height="678" key="search.everywhere.popup/0.900.1366.768/0.26.1366.694@0.26.1366.694" timestamp="1581454020100" />
+  </component>
+</project>

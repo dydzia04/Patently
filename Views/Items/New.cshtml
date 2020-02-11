@@ -1,0 +1,17 @@
+@model MVC_Project.VievModels.NewItem
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h1>Nowy Przedmiot</h1>
+<form>
+    <label for="Name">Nazwa: </label>
+    <input type="text" name="Name" class="form-control"/><br/>
+    <label for="DateWhenOwned">Data: </label>
+    <input type="date" name="DateWhenOwned" class="form-control"/><br/>
+    <label for="Creator">Twórca: </label>
+    <p>Zrobić liste albo tabelkę wszystkich twórców</p>
+    <button type="submit" class="btn btn-primary">Stwórz</button>
+</form>

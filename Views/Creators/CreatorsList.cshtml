@@ -1,0 +1,36 @@
+@model MVC_Project.VievModels.CreatorsViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h1>Twórcy</h1>
+<p>
+    @Html.ActionLink("Nowy twórca", "New", "Creators", null, new { @class="btn btn-primary" })
+</p>
+@if (@Model.Creators.Count > 0)
+{
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Twórcy</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        @foreach (var creator in Model.Creators)
+        {
+            <tr>
+                <td>
+                    <a href="">@creator.Name @creator.SecName</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+@if (@Model.Creators.Count == 0)
+{
+    <p>Nie ma żadnych przedmiotów</p>
+}

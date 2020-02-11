@@ -1,0 +1,16 @@
+@model MVC_Project.VievModels.NewCreator
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h1>Nowy Twórca</h1>
+<form>
+    <label for="Name">Imię: </label>
+    <input type="text" name="Name" class="form-control"/><br/>
+    <label for="SecName">Nazwisko: </label>
+    <input type="text" name="SecName" class="form-control"/><br/>
+    <button type="submit" class="btn btn-primary">Stwórz</button>
+</form>
+
