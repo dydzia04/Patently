@@ -97,6 +97,11 @@ namespace Patently.Controllers
             return View(item);
         }
 
+        public ActionResult Create()
+        {
+            return View();
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create( [Bind("ID, Name, DateWhenAdded, Creator")] Item item )

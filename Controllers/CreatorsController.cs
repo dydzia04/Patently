@@ -86,6 +86,11 @@ namespace Patently.Controllers
 
             return View(creator);
         }
+        
+        public ActionResult Create()
+        {
+            return View();
+        }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
