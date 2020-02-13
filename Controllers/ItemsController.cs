@@ -1,61 +1,74 @@
 using System;
-using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using MVC_Project.Models;
-using MVC_Project.VievModels;
+using Microsoft.EntityFrameworkCore;
+using Patently.Data;
+using Patently.Models;
 
-namespace MVC_Project.Controllers
+namespace Patently.Controllers
 {
     public class ItemsController : Controller
     {
-        public IActionResult Items()
+        private readonly MvcItemContext _context;
+
+        public ItemsController(MvcItemContext context)
         {
-            Item item = new Item("Coś", DateTime.Now, new Creator("Jan", "Kowalski"));
-
-            var viewModel = new ItemViewModel
-            {
-                Item = item
-            };
-
-            return View(viewModel);
+            _context = context;
         }
-        public IActionResult Items( string name )
+        public async Task<IActionResult> Index()
         {
-            Item item = new Item( name, DateTime.Now );
-
-            var viewModel = new ItemViewModel
-            {
-                Item = item
-            };
-
-            return View(viewModel);
+            return View(await _context.Items.ToListAsync());
         }
-
-        public IActionResult ItemsList()
+        public async Task<IActionResult> Details( int? id ) //TODO: show item from DB with selected ID
         {
-            List<Item> items = new List<Item>
-            {
-                new Item("Coś", DateTime.Now),
-                new Item("Coś2", DateTime.Now),
-                new Item("Coś3", DateTime.Now)
-            };
-            
-            var viewModel = new ItemsViewModel
-            {
-                Items = items
-            };
+            if (id == null)
+                return NotFound();
 
-            return View(viewModel);
+            var item = await _context.Items.FirstOrDefaultAsync( i => i.ID == id );
+
+            if (item == null)
+                return NotFound();
+
+            return View(item);
+        }
+        public IActionResult New() // TODO: add data to DB
+        {
+            return null;
         }
 
-        public IActionResult NewItem()
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit( int? id, [Bind("ID, Name, DateWhenAdded, Creator")] Item item )
+        {
+            if (id != item.ID)
+                return NotFound();
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(item);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    throw;
+                }
+
+                return RedirectToAction("Index");
+            }
+
+            return View(item);
+        }
+
+        public IActionResult Create()
         {
             throw new NotImplementedException();
         }
 
-        public IActionResult New()
+        public IActionResult Delete( int? id )
         {
-            return View(new NewItem());
+            throw new NotImplementedException();
         }
     }
 }

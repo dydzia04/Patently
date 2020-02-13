@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace MVC_Project.Controllers
+namespace Patently.Controllers
 {
     public class RegisterController : Controller
     {

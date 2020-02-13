@@ -1,12 +1,11 @@
-@model MVC_Project.VievModels.NewItem
-
 @{
     ViewBag.Title = "title";
     Layout = "_Layout";
 }
 
 <h1>Nowy Przedmiot</h1>
-<form>
+<hr/>
+<form asp-action="New">
     <label for="Name">Nazwa: </label>
     <input type="text" name="Name" class="form-control"/><br/>
     <label for="DateWhenOwned">Data: </label>

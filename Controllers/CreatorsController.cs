@@ -1,74 +1,73 @@
 using System;
-using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using MVC_Project.Models;
-using MVC_Project.VievModels;
+using Microsoft.EntityFrameworkCore;
+using Patently.Data;
+using Patently.Models;
 
-namespace MVC_Project.Controllers
+namespace Patently.Controllers
 {
     public class CreatorsController : Controller
     {
-        public IActionResult Creators()
+        private readonly MvcCreatorContext _context;
+        public CreatorsController(MvcCreatorContext context)
         {
-            Creator creator = new Creator("Jan", "Kowalski");
-            
-            List<Item> items = new List<Item>
-            {
-                new Item("Coś", DateTime.Now, creator),
-                new Item("Coś2", DateTime.Now, creator),
-                new Item("Coś3", DateTime.Now, creator)
-            };
-
-            creator.ItemsCreated = items;
-            
-            var viewModel = new CreatorViewModel
-            {
-                Creator = creator
-            };
-            
-            return View(viewModel);
+            _context = context;
         }
-        
-        public IActionResult Creators(string name, string secname)
+        public async Task<IActionResult> Index() // TODO: fetch data from DB
         {
-            Creator creator = new Creator( name, secname );
-            
-            List<Item> items = new List<Item>
-            {
-                new Item("Coś", DateTime.Now, creator),
-                new Item("Coś2", DateTime.Now, creator),
-                new Item("Coś3", DateTime.Now, creator)
-            };
+            return View(await _context.Creators.ToListAsync());
+        }
+        public async Task<IActionResult> Details( int? id )
+        {
+            if (id == null)
+                return NotFound();
 
-            creator.ItemsCreated = items;
-            
-            var viewModel = new CreatorViewModel
-            {
-                Creator = creator
-            };
-            
-            return View(viewModel);
+            var creator = await _context.Creators.FirstOrDefaultAsync(c => c.ID == id);
+
+            if (creator == null)
+                return NotFound();
+
+            return View(creator);
+        }
+        public IActionResult New() // TODO: add data to DB
+        {
+            return null;
         }
 
-        public IActionResult CreatorsList()
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit( int? id , [Bind("ID, Name, SecName, ItemsCreated")] Creator creator)
         {
-            List<Creator> creator = new List<Creator>
+            if (id != creator.ID)
+                return NotFound();
+
+            if (ModelState.IsValid)
             {
-                new Creator("A", "B"),
-                new Creator("C", "D")
-            };
-            
-            var viewModel = new CreatorsViewModel
-            {
-                Creators = creator
-            };
-            
-            return View(viewModel);
+                try
+                {
+                    _context.Update(creator);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    throw;
+                }
+
+                return RedirectToAction("Index");
+            }
+
+            return View(creator);
         }
 
-        public IActionResult New()
+        public IActionResult Create()
         {
-            return View(new NewCreator());
+            throw new NotImplementedException();
+        }
+
+        public IActionResult Delete( int? id )
+        {
+            throw new NotImplementedException();
         }
     }
 }

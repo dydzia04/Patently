@@ -1,6 +1,4 @@
-using System;
-
-namespace MVC_Project.Models
+namespace Patently.Models
 {
     public class ErrorViewModel
     {
