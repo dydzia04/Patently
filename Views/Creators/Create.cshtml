@@ -1,17 +1,16 @@
 @model Patently.Models.Creator
 @{
-    ViewData["Title"] = "Edytuj twórcę";
+    ViewData["Title"] = "Nowy twórca";
     Layout = "_Layout";
 }
 
-<h1>Edytuj twórcę</h1>
+<h1>Nowy twórca</h1>
 <hr/>
 
 <div class="row">
     <div class="col-md-4"> @* TODO *@  
-        <form asp-action="Edit">
+        <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="ID"/>
             <div class="form-group">
                 <label asp-for="Name" class="custom-control-label">Imię: </label>
                 <input asp-for="Name" class="form-control"/>

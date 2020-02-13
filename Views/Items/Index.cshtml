@@ -1,4 +1,4 @@
-@model IEnumerable<Patently.Models.Item>
+@model Patently.Models.NameDateViewModel
 @{
     ViewData["Title"] = "Przedmioty";
     Layout = "_Layout";
@@ -6,27 +6,38 @@
 
 <h1>Przedmioty</h1> 
 <hr/>
+
 <p>
     <a class="btn btn-info" asp-action="Create">Nowy Przedmiot</a>
 </p>
+
+<form asp-controller="Items" asp-action="Index" method="get">
+    <p>
+        <select asp-for="Date" asp-items="Model.Dates">
+            <option value="">Wszystkie</option>
+        </select>
+        Wyszukaj: <input type="text" name="SearchString"/>
+        <input class="btn btn-primary" type="submit" value="Filter"/>
+    </p>
+</form>
 
 <table class="table table-striped">
     <thead>
     <tr>
         <th>
-            @Html.DisplayNameFor( model => model.Name )
+            @Html.DisplayNameFor( model => model.Items[0].Name )
         </th>
         <th>
-            @Html.DisplayNameFor( model => model.DateWhenAdded )
+            @Html.DisplayNameFor( model => model.Items[0].DateWhenAdded )
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Creator)
+            @Html.DisplayNameFor(model => model.Items[0].Creator)
         </th>
         <th></th>
     </tr>
     </thead>
     <tbody>
-    @foreach (var item in Model)
+    @foreach (var item in Model.Items)
     {
         <tr>
             <td>

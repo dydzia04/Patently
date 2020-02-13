@@ -1,6 +1,8 @@
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Patently.Data;
 using Patently.Models;
@@ -15,9 +17,36 @@ namespace Patently.Controllers
         {
             _context = context;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            return View(await _context.Items.ToListAsync());
+            IQueryable<DateTime> dateQuery = from d in _context.Items orderby d.DateWhenAdded select d.DateWhenAdded;
+            var items = from i in _context.Items select i;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                items = items
+                    .Where(s => s.Name.Contains(searchString));
+            }
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                items = items
+                    .Where(s => s.DateWhenAdded.ToString().Contains(searchString));
+            }
+
+            var NameDateViewModel = new NameDateViewModel
+            {
+                Dates = new SelectList(await dateQuery.Distinct().ToListAsync()),
+                Items = await items.ToListAsync()
+            };
+
+            return View(NameDateViewModel);
+        }
+
+        [HttpPost]
+        public string Index(string searchString, bool notUsed)
+        {
+            return "From [HttpPost]Index: filter on " + searchString;
         }
         public async Task<IActionResult> Details( int? id ) //TODO: show item from DB with selected ID
         {
@@ -31,9 +60,16 @@ namespace Patently.Controllers
 
             return View(item);
         }
-        public IActionResult New() // TODO: add data to DB
+        public async Task<IActionResult> Edit(int? id)
         {
-            return null;
+            if (id == null)
+                return NotFound();
+
+            var item = await _context.Items.FindAsync(id);
+            if (item == null)
+                return NotFound();
+
+            return View(item);
         }
 
         [HttpPost]
@@ -61,14 +97,40 @@ namespace Patently.Controllers
             return View(item);
         }
 
-        public IActionResult Create()
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create( [Bind("ID, Name, DateWhenAdded, Creator")] Item item )
         {
-            throw new NotImplementedException();
+            if (ModelState.IsValid)
+            {
+                _context.Add(item);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+
+            return View(item);
         }
 
-        public IActionResult Delete( int? id )
+        public async Task<IActionResult> Delete( int? id )
         {
-            throw new NotImplementedException();
+            if (id == null)
+                return NotFound();
+
+            var item = await _context.Items.FirstOrDefaultAsync(i => i.ID == id);
+            if (item == null)
+                return NotFound();
+
+            return View(item);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var item = await _context.Items.FindAsync(id);
+            _context.Remove(item);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
     }
 }

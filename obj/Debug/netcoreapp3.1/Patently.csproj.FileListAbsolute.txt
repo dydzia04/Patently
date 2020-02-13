@@ -34,8 +34,6 @@
 /home/patryk/Pulpit/C#_Projects/Patently/obj/Debug/netcoreapp3.1/Patently.pdb
 /home/patryk/Pulpit/C#_Projects/Patently/obj/Debug/netcoreapp3.1/Patently.csproj.CopyComplete
 /home/patryk/Pulpit/C#_Projects/Patently/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_Navbar.cshtml.g.cs
-/home/patryk/Pulpit/C#_Projects/Patently/obj/Debug/netcoreapp3.1/Razor/Views/Creators/New.cshtml.g.cs
-/home/patryk/Pulpit/C#_Projects/Patently/obj/Debug/netcoreapp3.1/Razor/Views/Items/New.cshtml.g.cs
 /home/patryk/Pulpit/C#_Projects/Patently/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Razor.Language.dll
 /home/patryk/Pulpit/C#_Projects/Patently/bin/Debug/netcoreapp3.1/Microsoft.Bcl.AsyncInterfaces.dll
 /home/patryk/Pulpit/C#_Projects/Patently/bin/Debug/netcoreapp3.1/Microsoft.Bcl.HashCode.dll
@@ -170,3 +168,7 @@
 /home/patryk/Pulpit/C#_Projects/Patently/obj/Debug/netcoreapp3.1/Razor/Views/Items/Details.cshtml.g.cs
 /home/patryk/Pulpit/C#_Projects/Patently/obj/Debug/netcoreapp3.1/Razor/Views/Creators/Edit.cshtml.g.cs
 /home/patryk/Pulpit/C#_Projects/Patently/obj/Debug/netcoreapp3.1/Razor/Views/Items/Edit.cshtml.g.cs
+/home/patryk/Pulpit/C#_Projects/Patently/obj/Debug/netcoreapp3.1/Razor/Views/Creators/Create.cshtml.g.cs
+/home/patryk/Pulpit/C#_Projects/Patently/obj/Debug/netcoreapp3.1/Razor/Views/Creators/Delete.cshtml.g.cs
+/home/patryk/Pulpit/C#_Projects/Patently/obj/Debug/netcoreapp3.1/Razor/Views/Items/Create.cshtml.g.cs
+/home/patryk/Pulpit/C#_Projects/Patently/obj/Debug/netcoreapp3.1/Razor/Views/Items/Delete.cshtml.g.cs
