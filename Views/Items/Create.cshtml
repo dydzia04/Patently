@@ -31,11 +31,12 @@
             </div>
         </div>
         
+        <!-- zamienić na listę rozwijaną -->
         <div class="form-group">
                     @Html.LabelFor(model => model.Creator, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.Creator, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Creator, "", new { @class = "text-danger" })
+                        @Html.EditorFor(model => model.Creator, new {htmlAttributes = new {@class = "form-control"}})
+                        @Html.ValidationMessageFor(model => model.Creator, "", new {@class = "text-danger"})
                     </div>
                 </div>
 

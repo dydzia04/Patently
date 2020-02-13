@@ -24,9 +24,9 @@
                 <span asp-validation-for="DateWhenAdded" class="text-danger"></span>
             </div>
             
-            <div class="form-group">
-                <label asp-for="Creator" class="custom-control-label">Twórca: </label> <!-- TODO: add list of existing creators with selection -->
-                <input asp-for="Creator" class="form-control"/>
+            <div class="form-group"><!-- TODO: add list of existing creators with selection -->
+                <label asp-for="Creator.ID" class="custom-control-label">ID Twórcy: </label> 
+                <input asp-for="Creator.ID" class="form-control" type="number"/>
                 <span asp-validation-for="Creator" class="text-danger"></span>
             </div>
             
