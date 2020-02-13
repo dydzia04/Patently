@@ -1,8 +1,47 @@
 @model Patently.Models.Item
 
 @{
-    ViewBag.Title = "title";
-    Layout = "_Layout";
+    ViewBag.Title = "Usuwanie Przedmiotu";
 }
 
-<h2>title</h2>
+<h2>Usuwanie</h2>
+<p class="error">@ViewBag.ErrorMessage</p>
+<h3>Czy jesteś pewny że chcesz usunąć?</h3>
+<div>
+    <h4>Przedmiot</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateWhenAdded)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateWhenAdded)
+        </dd>
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.Creator)
+        </dt>
+        
+        <dd>
+            @Html.DisplayFor(model => model.Creator)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions">
+            <input type="submit" value="Delete" class="btn btn-danger" /> 
+            <a class="btn btn-primary" asp-action="Index">Powrót do listy</a>
+        </div>
+    }
+</div>
