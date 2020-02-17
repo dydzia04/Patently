@@ -18,17 +18,7 @@ namespace Patently
 
                 try
                 {
-                    SeedItemsData.Initalize(services);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e);
-                    throw;
-                }
-                
-                try
-                {
-                    SeedCreatorsData.Initalize(services);
+                    SeedData.Initalize(services);
                 }
                 catch (Exception e)
                 {
@@ -36,7 +26,7 @@ namespace Patently
                     throw;
                 }
             }
-            
+
             host.Run();
         }
 

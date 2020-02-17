@@ -34,7 +34,7 @@ namespace Patently.Migrations.Creator
 
                     b.HasKey("ID");
 
-                    b.ToTable("Creators");
+                    b.ToTable("Creator");
                 });
 
             modelBuilder.Entity("MVC_Project.Models.Item", b =>

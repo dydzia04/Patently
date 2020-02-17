@@ -1,41 +1,61 @@
 @model Patently.Models.Creator
 @{
-    ViewData["Title"] = "Edytuj twórcę";
-    Layout = "_Layout";
+  ViewData["Title"] = "Edytuj twórcę";
+  Layout = "_Layout";
 }
 
 <h1>Edytuj twórcę</h1>
 <hr/>
 
 <div class="row">
-    <div class="col-md-4"> @* TODO *@  
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="ID"/>
-            <div class="form-group">
-                <label asp-for="Name" class="custom-control-label">Imię: </label>
-                <input asp-for="Name" class="form-control"/>
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            
-            <div class="form-group">
-                <label asp-for="SecName" class="custom-control-label">Nazwisko: </label>
-                <input asp-for="SecName" class="form-control"/>
-                <span asp-validation-for="SecName" class="text-danger"></span>
-            </div>
-            
-            <div class="form-group">
-                <input type="submit" value="Zapisz" class="btn btn-primary"/>
-            </div>
-        </form>
-    </div>
+  <div class="col-md-4">
+    <form asp-action="Edit">
+      <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+      <input type="hidden" asp-for="ID"/>
+      <div class="form-group">
+        <label asp-for="Name" class="custom-control-label">Imię: </label>
+        <input asp-for="Name" class="form-control"/>
+        <span asp-validation-for="Name" class="text-danger"></span>
+      </div>
+
+      <div class="form-group">
+        <label asp-for="SecName" class="custom-control-label">Nazwisko: </label>
+        <input asp-for="SecName" class="form-control"/>
+        <span asp-validation-for="SecName" class="text-danger"></span>
+      </div>
+
+      <div class="form-group">
+        <label asp-for="ItemsCreated" class="custom-control-label">Twory(kliknij aby usunąć): </label>
+        @if (Model.ItemsCreated.Count == 0)
+        {
+          <p>Twórca nie ma żadnych dodanych przedmiotów.</p>
+        }
+        else
+        {
+          <ul>
+            @foreach (var item in Model.ItemsCreated)
+            {
+              <a asp-controller="Items" asp-action="Delete" asp-route-id="@item.ID" style="color: red;">
+                <li>
+                  @Html.DisplayFor(modelItem => item.Name) dodany @Html.DisplayFor(modelItem => item.DateWhenAdded)
+                </li></a>
+            }
+          </ul>
+        }
+      </div>
+
+      <div class="form-group">
+        <input type="submit" value="Zapisz" class="btn btn-primary"/>
+      </div>
+    </form>
+  </div>
 </div>
 
 <div>
-    <a class="btn btn-primary" asp-action="Index">Powrót do listy</a>
+  <a class="btn btn-primary" asp-action="Index">Powrót do listy</a>
 </div>
 
 @section Scripts
 {
-    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+  @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

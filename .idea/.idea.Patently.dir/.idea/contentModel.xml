@@ -11,12 +11,10 @@
         <e p="CreatorsController.cs" t="Include" />
         <e p="HomeController.cs" t="Include" />
         <e p="ItemsController.cs" t="Include" />
-        <e p="LoginController.cs" t="Include" />
-        <e p="RegisterController.cs" t="Include" />
       </e>
       <e p="Data" t="Include">
         <e p="MvcCreatorContext.cs" t="Include" />
-        <e p="MvcItemsContext.cs" t="Include" />
+        <e p="MvcItemContext.cs" t="Include" />
       </e>
       <e p="LICENSE" t="Include" />
       <e p="Migrations" t="Include">
@@ -33,11 +31,12 @@
       </e>
       <e p="Models" t="Include">
         <e p="Creator.cs" t="Include" />
+        <e p="CreatorsItemsMapViewModel.cs" t="Include" />
         <e p="ErrorViewModel.cs" t="Include" />
         <e p="Items.cs" t="Include" />
         <e p="NameDateViewModel.cs" t="Include" />
-        <e p="SeedCreatorsData.cs" t="Include" />
-        <e p="SeedItemsData.cs" t="Include" />
+        <e p="SeedData.cs" t="Include" />
+        <e p="itemEditViewModel.cs" t="Include" />
       </e>
       <e p="Patently.csproj" t="IncludeRecursive" />
       <e p="Patently.db" t="Include" />

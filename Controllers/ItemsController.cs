@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -11,27 +12,30 @@ namespace Patently.Controllers
 {
     public class ItemsController : Controller
     {
-        private readonly MvcItemContext _context;
+      private readonly MvcItemContext _itemContext;
+      private readonly MvcCreatorContext _creatorContext;
 
-        public ItemsController(MvcItemContext context)
+        public ItemsController(MvcItemContext itemContext, MvcCreatorContext creatorContext)
         {
-            _context = context;
+            _itemContext = itemContext;
+            _creatorContext = creatorContext;
         }
-        public async Task<IActionResult> Index(string searchString)
+        public async Task<IActionResult> Index(string searchString, string Date)
         {
-            IQueryable<DateTime> dateQuery = from d in _context.Items orderby d.DateWhenAdded select d.DateWhenAdded;
-            var items = from i in _context.Items select i;
+            IQueryable<string> dateQuery = from d in _itemContext.Items orderby d.DateWhenAdded select d.DateWhenAdded;
+            var items = from i in _itemContext.Items select i;
 
-            if (!String.IsNullOrEmpty(searchString))
+            if (!string.IsNullOrEmpty(searchString))
             {
                 items = items
                     .Where(s => s.Name.Contains(searchString));
             }
 
-            if (!string.IsNullOrEmpty(searchString))
+            if ( !string.IsNullOrEmpty(Date) )
             {
                 items = items
-                    .Where(s => s.DateWhenAdded.ToString().Contains(searchString));
+                    .Where(s =>
+                        s.DateWhenAdded.Contains(Date) );
             }
 
             var NameDateViewModel = new NameDateViewModel
@@ -48,12 +52,12 @@ namespace Patently.Controllers
         {
             return "From [HttpPost]Index: filter on " + searchString;
         }
-        public async Task<IActionResult> Details( int? id ) //TODO: show item from DB with selected ID
+        public async Task<IActionResult> Details( int? id )
         {
             if (id == null)
                 return NotFound();
 
-            var item = await _context.Items.FirstOrDefaultAsync( i => i.ID == id );
+            var item = await _itemContext.Items.FirstOrDefaultAsync( i => i.ID == id );
 
             if (item == null)
                 return NotFound();
@@ -65,16 +69,26 @@ namespace Patently.Controllers
             if (id == null)
                 return NotFound();
 
-            var item = await _context.Items.FindAsync(id);
+            var item = await _itemContext.Items.FindAsync(id);
             if (item == null)
                 return NotFound();
 
-            return View(item);
+            var vm = new itemEditViewModel
+            {
+              ID = item.ID,
+              Name = item.Name,
+              Creator = item.Creator,
+              DateWhenAdded = item.DateWhenAdded,
+              creatorID = item.Creator.ID,
+              Creators = _creatorContext.Creator.ToList()
+            };
+
+            return View(vm);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit( int? id, [Bind("ID, Name, DateWhenAdded, Creator")] Item item )
+        public async Task<IActionResult> Edit( int? id, [Bind("ID, Name, DateWhenAdded, Creator")] Item item )//TODO: make it work
         {
             if (id != item.ID)
                 return NotFound();
@@ -83,8 +97,8 @@ namespace Patently.Controllers
             {
                 try
                 {
-                    _context.Update(item);
-                    await _context.SaveChangesAsync();
+                  _itemContext.Update(item);
+                    await _itemContext.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -94,26 +108,30 @@ namespace Patently.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View(item);
+            return View(item as itemEditViewModel);
         }
 
         public ActionResult Create()
         {
-            return View();
+            var vm = new itemEditViewModel
+            {
+              Creators = _creatorContext.Creator.ToList()
+            };
+            return View( vm );
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create( [Bind("ID, Name, DateWhenAdded, Creator")] Item item )
+        public async Task<IActionResult> Create( [Bind("ID, Name, DateWhenAdded, Creator")] Item item ) //TODO: make it work
         {
             if (ModelState.IsValid)
             {
-                _context.Add(item);
-                await _context.SaveChangesAsync();
+                _itemContext.Add(item);
+                await _itemContext.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
-            return View(item);
+            return View(item as itemEditViewModel);
         }
 
         public async Task<IActionResult> Delete( int? id )
@@ -121,7 +139,7 @@ namespace Patently.Controllers
             if (id == null)
                 return NotFound();
 
-            var item = await _context.Items.FirstOrDefaultAsync(i => i.ID == id);
+            var item = await _itemContext.Items.FirstOrDefaultAsync(i => i.ID == id);
             if (item == null)
                 return NotFound();
 
@@ -132,9 +150,9 @@ namespace Patently.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var item = await _context.Items.FindAsync(id);
-            _context.Remove(item);
-            await _context.SaveChangesAsync();
+            var item = await _itemContext.Items.FindAsync(id);
+            _itemContext.Remove(item);
+            await _itemContext.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
     }

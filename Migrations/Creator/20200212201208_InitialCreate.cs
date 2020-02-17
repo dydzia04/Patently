@@ -8,7 +8,7 @@ namespace Patently.Migrations.Creator
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Creators",
+                name: "Creator",
                 columns: table => new
                 {
                     ID = table.Column<int>(nullable: false)
@@ -37,7 +37,7 @@ namespace Patently.Migrations.Creator
                     table.ForeignKey(
                         name: "FK_Item_Creators_CreatorID",
                         column: x => x.CreatorID,
-                        principalTable: "Creators",
+                        principalTable: "Creator",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -54,7 +54,7 @@ namespace Patently.Migrations.Creator
                 name: "Item");
 
             migrationBuilder.DropTable(
-                name: "Creators");
+                name: "Creator");
         }
     }
 }

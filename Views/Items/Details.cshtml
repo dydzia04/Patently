@@ -16,19 +16,22 @@
         <dd class="col-sm-10">
             @Html.DisplayFor( model => model.Name )
         </dd>
-        
+
         <dt class="col-sm-2">
             @Html.DisplayNameFor( model => model.DateWhenAdded )
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor( model => model.DateWhenAdded)
         </dd>
-        
+
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Creator)  
+            @Html.DisplayNameFor(model => model.Creator)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Creator)
+          <a asp-controller="Creators" asp-action="Details" asp-route-id="@Model.Creator.ID">
+            @Html.DisplayFor(model => model.Creator.Name)
+            @Html.DisplayFor(model => model.Creator.SecName)
+          </a>
         </dd>
     </dl>
 </div>

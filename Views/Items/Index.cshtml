@@ -4,7 +4,7 @@
     Layout = "_Layout";
 }
 
-<h1>Przedmioty</h1> 
+<h1>Przedmioty</h1>
 <hr/>
 
 <p>
@@ -47,7 +47,7 @@
                 @Html.DisplayFor( modelItem => item.DateWhenAdded )
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Creator )
+              <p>@Html.DisplayFor( modelItem => item.Creator.Name ) @Html.DisplayFor(modelItem => item.Creator.SecName)</p>
             </td>
             <td>
                 <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.ID">Edytuj</a>

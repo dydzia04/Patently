@@ -15,9 +15,9 @@ namespace Patently.Controllers
         {
             _context = context;
         }
-        public async Task<IActionResult> Index(string searchString) // TODO: fetch data from DB
+        public async Task<IActionResult> Index(string searchString)
         {
-            var creators = from c in _context.Creators select c;
+            var creators = from c in _context.Creator select c;
 
             if (!String.IsNullOrEmpty(searchString))
             {
@@ -37,7 +37,7 @@ namespace Patently.Controllers
             if (id == null)
                 return NotFound();
 
-            var creator = await _context.Creators.FirstOrDefaultAsync(c => c.ID == id);
+            var creator = await _context.Creator.FirstOrDefaultAsync(c => c.ID == id);
 
             if (creator == null)
                 return NotFound();
@@ -49,7 +49,7 @@ namespace Patently.Controllers
             if (id == null)
                 return NotFound();
 
-            var creator = await _context.Creators.FindAsync(id);
+            var creator = await _context.Creator.FindAsync(id);
             if (creator == null)
                 return NotFound();
 
@@ -71,7 +71,7 @@ namespace Patently.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if ( creator.ID != -1 ) //TODO
+                    if ( creator.ID != -1 )
                     {
                         return NotFound();
                     }
@@ -86,7 +86,7 @@ namespace Patently.Controllers
 
             return View(creator);
         }
-        
+
         public ActionResult Create()
         {
             return View();
@@ -111,7 +111,7 @@ namespace Patently.Controllers
             if (id == null)
                 return NotFound();
 
-            var creator = await _context.Creators.FirstOrDefaultAsync(i => i.ID == id);
+            var creator = await _context.Creator.FirstOrDefaultAsync(i => i.ID == id);
             if (creator == null)
                 return NotFound();
 
@@ -122,7 +122,7 @@ namespace Patently.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var creator = await _context.Creators.FindAsync(id);
+            var creator = await _context.Creator.FindAsync(id);
             _context.Remove(creator);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

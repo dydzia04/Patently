@@ -16,14 +16,33 @@
         <dd class="col-sm-10">
             @Html.DisplayFor( model => model.Name )
         </dd>
-        
+
         <dt class="col-sm-2">
             @Html.DisplayNameFor( model => model.SecName )
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor( model => model.SecName)
         </dd>
-        <!-- TODO: add list of items with CreatorID as this -->
+        <dt class="col-sm-2">
+          @Html.DisplayNameFor(model => model.ItemsCreated)
+        </dt>
+        <dd class="col-sm-10">
+          @if (Model.ItemsCreated.Count == 0)
+            {
+              <p>Twórca nie ma żadnych dodanych przedmiotów.</p>
+            }
+            else
+            {
+              <ul>
+                @foreach (var item in Model.ItemsCreated)
+                {
+                  <li>
+                    @Html.DisplayFor(modelItem => item.Name) dodany @Html.DisplayFor(modelItem => item.DateWhenAdded)
+                  </li>
+                }
+              </ul>
+            }
+        </dd>
     </dl>
 </div>
 

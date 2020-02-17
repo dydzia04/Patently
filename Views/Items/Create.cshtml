@@ -1,4 +1,4 @@
-@model Patently.Models.Item
+@model Patently.Models.itemEditViewModel
 
 @{
     ViewBag.Title = "Dodaj Przedmiot";
@@ -7,45 +7,50 @@
 <h2>Dodawanie</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Przedmiot</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.DateWhenAdded, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DateWhenAdded, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DateWhenAdded, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        
-        <!-- zamienić na listę rozwijaną -->
-        <div class="form-group">
-                    @Html.LabelFor(model => model.Creator, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.Creator, new {htmlAttributes = new {@class = "form-control"}})
-                        @Html.ValidationMessageFor(model => model.Creator, "", new {@class = "text-danger"})
-                    </div>
-                </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Dodaj" class="btn btn-primary" />
-            </div>
-        </div>
+  <form asp-action="Create" asp-controller="Items" method="get" class="form-horizontal">
+    <h4>Przedmiot</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+      @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+      <div class="col-md-10">
+        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+      </div>
     </div>
+
+    <div class="form-group">
+      @Html.LabelFor(model => model.DateWhenAdded, htmlAttributes: new { @class = "control-label col-md-2" })
+      <div class="col-md-10">
+        @Html.EditorFor(model => model.DateWhenAdded, new { htmlAttributes = new { @class = "form-control", type="date" } })
+        @Html.ValidationMessageFor(model => model.DateWhenAdded, "", new { @class = "text-danger" })
+      </div>
+    </div>
+
+    <div class="form-group">
+      <select asp-for="Creator">
+        @foreach (var creator in @Model.Creators)
+        {
+          @if (creator.ID == @Model.creatorID )
+          {
+            <option value="@creator" selected="selected">@creator.Name @creator.SecName</option>
+          }
+          else
+          {
+            <option value="@creator" >@creator.Name @creator.SecName</option>
+          }
+        }
+      </select>
+    </div>
+
+    <div class="col-md-offset-2 col-md-10">
+      <input type="submit" value="Dodaj" class="btn btn-primary" />
+    </div>
+  </form>
 }
 
 <div>
